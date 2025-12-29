@@ -1,7 +1,6 @@
 <?php
 require_once __DIR__ . '/../vendor/autoload.php';
 
-
 use Dotenv\Dotenv;
 
 if (file_exists(__DIR__ . '/../.env')) {
@@ -12,11 +11,11 @@ if (file_exists(__DIR__ . '/../.env')) {
 function conexion()
 {
     try {
-        $host = getenv('DB_HOST');
-        $port = getenv('DB_PORT');
-        $db   = getenv('DB_NAME');
-        $user = getenv('DB_USER');
-        $pass = getenv('DB_PASS');
+        $host = getenv('DB_HOST') ?: ($_ENV['DB_HOST'] ?? 'localhost');
+        $port = getenv('DB_PORT') ?: ($_ENV['DB_PORT'] ?? '3306');
+        $db   = getenv('DB_NAME') ?: ($_ENV['DB_NAME'] ?? '');
+        $user = getenv('DB_USER') ?: ($_ENV['DB_USER'] ?? '');
+        $pass = getenv('DB_PASS') ?: ($_ENV['DB_PASS'] ?? '');
 
         $dsn = "mysql:host=$host;port=$port;dbname=$db;charset=utf8mb4";
 
