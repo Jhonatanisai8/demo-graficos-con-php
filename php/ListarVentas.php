@@ -1,5 +1,5 @@
 <?php
-require_once "./database/Conexion.php";
+require_once('../database/Conexion.php');
 header('Content-Type: application/json');
 try {
     $conexion_SQL = conexion();
