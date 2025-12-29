@@ -11,7 +11,7 @@
         const ctx = document.getElementById('miGrafico').getContext('2d');
         new Chart(ctx, {
             // Puede ser 'line', 'pie', 'doughnut', etc.
-            type: 'line', 
+            type: 'line',
             data: {
                 labels: etiquetas,
                 datasets: [{
